@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema didático de abertura e acompanhamento de chamados de TI">
+  <title>Help Desk | Projeto Integrador</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo-conteudo">
+      <div><span class="marca">HD</span><div><h1>Help Desk</h1><p>Projeto Integrador • Curso Técnico de TI</p></div></div>
+      <span id="api-status" class="status-api">Verificando API...</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="sobretitulo">CENTRAL DE ATENDIMENTO</p>
+      <h2>O que podemos resolver hoje?</h2>
+      <p>Registre um problema ou acompanhe os atendimentos da equipe técnica.</p>
+    </section>
+
+    <section class="painel formulario-painel">
+      <div class="titulo-secao"><div><span class="numero">01</span><h2>Abrir chamado</h2></div><span class="tag">Cliente</span></div>
+      <form id="form-chamado">
+        <div class="campo"><label for="cliente">Solicitante</label><select id="cliente" required><option value="">Carregando clientes...</option></select></div>
+        <div class="campo"><label for="titulo">Título do chamado</label><input id="titulo" maxlength="150" required placeholder="Ex.: Computador não liga"></div>
+        <div class="campo"><label for="descricao">Descrição do problema</label><textarea id="descricao" rows="4" required placeholder="Descreva o que aconteceu e quando começou..."></textarea></div>
+        <button class="botao primario" id="btn-salvar" type="submit">Registrar chamado <span>→</span></button>
+      </form>
+      <p id="mensagem-form" class="mensagem" role="status"></p>
+    </section>
+
+    <section class="painel atendimentos">
+      <div class="titulo-secao"><div><span class="numero">02</span><h2>Atendimentos</h2></div><button id="btn-atualizar" class="botao secundario" type="button">↻ Atualizar</button></div>
+      <div class="barra-filtro"><label for="tecnico">Técnico responsável pelas ações</label><select id="tecnico"><option value="">Selecione o técnico</option></select></div>
+      <div class="tabela-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Chamado</th><th>Solicitante</th><th>Data</th><th>Status</th><th>Técnico</th><th>Ações</th></tr></thead>
+          <tbody id="tabela-corpo"><tr><td colspan="7" class="vazio">Carregando chamados...</td></tr></tbody>
+        </table>
+      </div>
+      <p id="mensagem-lista" class="mensagem" role="status"></p>
+    </section>
+    <p class="aviso-didatico">Ambiente didático: utilize somente dados fictícios. Esta versão não possui autenticação de usuários.</p>
+  </main>
+  <footer><div class="container">Projeto Help Desk • HTML, CSS, JavaScript, Java, Spring Boot e banco compatível com MySQL</div></footer>
+  <script src="js/config.js"></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
